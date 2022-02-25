@@ -42,15 +42,15 @@ export default class Register extends Component{
                 </div>
                 <form className="container">
                     <div className="form-group">
-                        <label className="text-white" >First Name</label>
+                        <label className="text-white" >อีเมล</label>
                         <input type="text" className="form-control" id="firstname" onChange={this.handleChang} value={this.state.firstname}/>
                     </div>
                     <div className="form-group">
-                        <label className="text-white"  >Last Name</label>
+                        <label className="text-white"  >จังหวัด</label>
                         <input type="text" className="form-control" id="lastname" onChange={this.handleChang} value={this.state.lastname}/>
                     </div>
                     <div className="form-group">
-                        <label className="text-white"  htmlFor="id">Id</label>
+                        <label className="text-white"  htmlFor="id">ชื่อ</label>
                         <input type="text" className="form-control" size="10" id="idkey" onChange={this.handleChang} value={this.state.idkey}/>
                     </div>
                     <a href="/showdata"> 

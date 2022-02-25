@@ -104,10 +104,10 @@ export default class Showdata extends Component{
                     <table className="table table-dark">
                         <thead>
                             <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Time</th>
+                            <th>ชื่อ</th>
+                            <th>อีเมล</th>
+                            <th>จังหวัด</th>
+                            <th>เวลา</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -119,7 +119,7 @@ export default class Showdata extends Component{
                                             <td>{user.lastname_P}</td>
                                             <td>{user.time}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={()=>this.call(user)}>Edit</button></td>
-                                            <td><button type="button" class="btn btn-danger"  onClick={()=>this.onDelete(user)}>Delet</button></td>
+                                            <td><button type="button" class="btn btn-danger"  onClick={()=>this.onDelete(user)}>Delete</button></td>
                                             <div className="box">
                                                 <Modal visible={this.state.visible}
                                                        width="1200"
@@ -144,6 +144,7 @@ export default class Showdata extends Component{
                                                             <input type="text" className="form-control" id="Time" onChange={this.handleChang} value={this.state.time}/>
                                                         </div>
                                                         <button type="button" className="btn btn-primary" onClick={this.handleClicked}>Submit</button>
+                                                        
                                                     </form>
                                                 </Modal>
                                             </div>
