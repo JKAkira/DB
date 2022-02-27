@@ -67,6 +67,72 @@ app.get('/nan', function(req,res){
     });
     console.log("after query");
 });
+// show payao
+app.get('/py', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="พะเยา";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show เเพร่
+app.get('/prae', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="เเพร่";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show เเม่ฮ่องสอน
+app.get('/ms', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="เเม่ฮ่องสอน";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show ลำปาง
+app.get('/lp', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="ลำปาง";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show ลำพูน
+app.get('/lpo', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="ลำพูน";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show อุตรดิตถ์
+app.get('/ut', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="อุตรดิตถ์";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
 //delete
 app.put('/delete', function(req, res) {
     var sql = 'DELETE FROM test123 WHERE id_P = ?';

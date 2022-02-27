@@ -12,6 +12,18 @@ import ButtonShowCM from "../showdata/ButtonShowCM";
 import ShowCM from "../showdata/ShowCM";
 import ButtonShowCR from "../showdata/ButtonShowCR";
 import ShowCR from "../showdata/ShowCR";
+import ButtonShowPY from "../showdata/ButtonShowPY";
+import ShowPY from "../showdata/ShowPY";
+import ButtonShowPR from "../showdata/ButtonShowPR";
+import ShowPR from "../showdata/ShowPR";
+import ButtonShowMS from "../showdata/ButtonShowMS";
+import ShowMS from "../showdata/ShowMS";
+import ButtonShowLP from "../showdata/ButtonShowLP";
+import ShowLP from "../showdata/ShowLP";
+import ButtonShowLPO from "../showdata/ButtonShowLPO";
+import ShowLPO from "../showdata/ShowLPO";
+import ShowUT from "../showdata/ShowUT";
+import ButtonShowUT from "../showdata/ButtonShowUT";
 
 export default class Facebook extends Component {
   state = {
@@ -69,15 +81,22 @@ export default class Facebook extends Component {
               email: {JSON.parse(localStorage.getItem('user')).email}
           <div className="my-3"><a className="btn btn-danger" href="/" onClick={this.logoutFacebook}>Logout</a></div>
           <BrowserRouter>
-            <br /><br /><div className="btn-group btn-group-lg"><ButtonRegister /><ButtonShowdata /><ButtonShowCM/>
-            <ButtonShowCR/><ButtonShownan/></div>
+            <br /><br /><div className="btn-group btn-group-lg"><ButtonRegister /><ButtonShowdata />
+            <ButtonShowCM/> <ButtonShowCR/><ButtonShownan/><ButtonShowPY/>
+           <ButtonShowPR/><ButtonShowMS/><ButtonShowLP/>
+            <ButtonShowLPO/>  <ButtonShowUT/>  </div>
             <Switch>
               <Route path='/register' component={Register} />
               <Route path='/showdata' component={Showdata} />
               <Route path='/showCM' component={ShowCM} />
               <Route path='/showCR' component={ShowCR} />
               <Route path='/shownan' component={Shownan} />
-
+              <Route path='/showPY' component={ShowPY} />
+              <Route path='/showPR' component={ShowPR} />
+              <Route path='/showMS' component={ShowMS} />
+              <Route path='/showLP' component={ShowLP} />
+              <Route path='/showLPO' component={ShowLPO} />
+              <Route path='/showUT' component={ShowUT} />
             </Switch>
           </BrowserRouter>
         </div>
