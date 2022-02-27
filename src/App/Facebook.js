@@ -6,6 +6,12 @@ import './style.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Register from "../register/Register";
 import Showdata from "../showdata/Showdata";
+import ButtonShownan from "../showdata/ButtonShownan";
+import Shownan from "../showdata/Shownan";
+import ButtonShowCM from "../showdata/ButtonShowCM";
+import ShowCM from "../showdata/ShowCM";
+import ButtonShowCR from "../showdata/ButtonShowCR";
+import ShowCR from "../showdata/ShowCR";
 
 export default class Facebook extends Component {
   state = {
@@ -63,10 +69,15 @@ export default class Facebook extends Component {
               email: {JSON.parse(localStorage.getItem('user')).email}
           <div className="my-3"><a className="btn btn-danger" href="/" onClick={this.logoutFacebook}>Logout</a></div>
           <BrowserRouter>
-            <br /><br /><div className="btn-group btn-group-lg"><ButtonRegister /><ButtonShowdata /></div>
+            <br /><br /><div className="btn-group btn-group-lg"><ButtonRegister /><ButtonShowdata /><ButtonShowCM/>
+            <ButtonShowCR/><ButtonShownan/></div>
             <Switch>
               <Route path='/register' component={Register} />
               <Route path='/showdata' component={Showdata} />
+              <Route path='/showCM' component={ShowCM} />
+              <Route path='/showCR' component={ShowCR} />
+              <Route path='/shownan' component={Shownan} />
+
             </Switch>
           </BrowserRouter>
         </div>

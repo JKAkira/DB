@@ -34,7 +34,39 @@ app.get('/data', function(req,res){
     });
     console.log("after query");
 });
-
+// show cm
+app.get('/cm', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="เชียงใหม่";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show cr
+app.get('/cr', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="เชียงราย";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
+// show nan
+app.get('/nan', function(req,res){
+    console.log("Hello in /data ");
+    let sql = 'SELECT * FROM test123 WHERE lastname_P="น่าน";';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        console.log(result);
+        res.json(result);
+    });
+    console.log("after query");
+});
 //delete
 app.put('/delete', function(req, res) {
     var sql = 'DELETE FROM test123 WHERE id_P = ?';
