@@ -78,7 +78,7 @@ export default class Facebook extends Component {
         >
           <img src={JSON.parse(localStorage.getItem('user')).picture.data.url} alt />
           <h2>PPAP Welcome {" "}{JSON.parse(localStorage.getItem('user')).name}</h2>
-              email: {JSON.parse(localStorage.getItem('user')).email}
+              Email: {JSON.parse(localStorage.getItem('user')).email}
           <div className="my-3"><a className="btn btn-danger" href="/" onClick={this.logoutFacebook}>Logout</a></div>
           <BrowserRouter>
             <br /><br /><div className="btn-group btn-group-lg"><ButtonRegister /><ButtonShowdata />

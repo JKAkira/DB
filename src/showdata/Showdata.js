@@ -13,7 +13,8 @@ export default class Showdata extends Component{
             idkey:"",
             firstname:"",
             lastname:"",
-            time:""
+            time:"",
+            auto:""
         }
         this.handleChang = this.handleChang.bind(this);
         this.handleClicked = this.handleClicked.bind(this);
@@ -58,7 +59,8 @@ export default class Showdata extends Component{
             idkey:user.id_P,
             firstname:user.firstname_P,
             lastname:user.lastname_P,
-            time:user.time
+            time:user.time,
+            auto:user.auto_P
         })
     }
     handleChang = (e) => {
@@ -70,7 +72,8 @@ export default class Showdata extends Component{
             idkey:this.state.idkey,
             firstname:this.state.firstname,
             lastname:this.state.lastname ,
-            time:this.state.time
+            time:this.state.time,
+            auto:this.state.auto
         }
         axios.put(url,data)
     }
@@ -81,14 +84,16 @@ export default class Showdata extends Component{
             idkey:this.state.idkey,
             firstname:this.state.firstname,
             lastname:this.state.lastname,
-            time:this.state.time
+            time:this.state.time,
+            auto:this.state.auto
         }
         axios.put(url,data)
         this.setState({
             idkey:"",
             firstname:"",
             lastname:"",
-            time:""
+            time:"",
+            auto:""
         });
 	this.closeModal();
         setTimeout(()=>{this.componentDidMount()},1)
@@ -105,8 +110,9 @@ export default class Showdata extends Component{
                         <thead>
                             <tr>
                             <th>ชื่อ</th>
-                            <th>อีเมล</th>
+                            <th>ระดับการศึกษา</th>
                             <th>จังหวัด</th>
+                            <th>อีเมล</th>
                             <th>เวลา</th>
                             </tr>
                         </thead>
@@ -117,6 +123,7 @@ export default class Showdata extends Component{
                                             <td>{user.id_P}</td>
                                             <td>{user.firstname_P}</td>
                                             <td>{user.lastname_P}</td>
+                                            <td>{user.auto_P}</td>
                                             <td>{user.time}</td>
                                             <td><button type="button" class="btn btn-warning" onClick={()=>this.call(user)}>Edit</button></td>
                                             <td><button type="button" class="btn btn-danger"  onClick={()=>this.onDelete(user)}>Delete</button></td>
@@ -139,6 +146,12 @@ export default class Showdata extends Component{
                                                             <label>lasttname:</label>
                                                             <input type="text" className="form-control" id="lastname" onChange={this.handleChang} value={this.state.lastname}/>
                                                         </div>
+
+                                                        <div className="form-group">
+                                                            <label>Email:</label>
+                                                            <input type="text" className="form-control" id="auto" onChange={this.handleChang} value={this.state.auto}/>
+                                                        </div>
+
                                                         <div className="form-group">
                                                             <label>Time:</label>
                                                             <input type="text" className="form-control" id="Time" onChange={this.handleChang} value={this.state.time}/>

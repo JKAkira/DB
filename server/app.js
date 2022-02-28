@@ -157,7 +157,8 @@ app.post('/data', function(req, res){
     let data = {
         id_P:req.body.idkey,
         firstname_P:req.body.firstname,
-        lastname_P:req.body.lastname
+        lastname_P:req.body.lastname,
+        auto_P:req.body.auto
     };
     let sql = 'INSERT INTO test123 SET ?';
     db.query(sql, data, (err, result)=>{
